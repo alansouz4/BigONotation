@@ -1,25 +1,15 @@
-import static java.lang.IO.println;
 
-void teste() {
-    ArrayList<String> arr = new ArrayList<>();
-    arr.add("A");
-    arr.add("B");
-    arr.add("C");
-
-    String target = "CA";
-
-    for(String i : arr) {
-        for(String j : arr) {
-            println(i + j);
-            if((i + j).equals(target)) {
-                println("true");
-                return;
+public int[] twoSum(int[] nums, int target) {
+    for (int i = 0; i < nums.length; i++) {
+        for (int j = i + 1; j < nums.length; j++) {
+            if (nums[i] + nums[j] == target) {
+                return new int[]{i, j};
             }
         }
     }
-    println("false");
+    return new int[]{};
 }
 
 void main(String[] args) {
-    teste();
+    twoSum(new int[]{3,2,4}, 6);
 }
